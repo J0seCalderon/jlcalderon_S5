@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jlcalderon_S5.Views.vPersona"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+            
+            <Label 
+            Text="BASE DE DATOS: PERSONA"
+            FontSize="20"
+            HorizontalTextAlignment="Center"/>
+            <Entry x:Name="txtPersona"
+               Placeholder="Ingrese un nombre"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="bntAgregar"
+                        Text="Agregar Persona"                    
+                        Grid.Row="0"                    
+                        Grid.Column="0"                    
+                        Clicked="bntAgregar_Clicked"/>
+                <Label x:Name="lblStatus"
+                       Grid.Row="1"                 
+                       Grid.Column="0"/>
+                <Button x:Name="bntObtener"
+                        Text="Listar Persona"                   
+                        Grid.Row="2"                  
+                        Grid.Column="0"                  
+                        Clicked="bntObtener_Clicked"/>
+                <CollectionView x:Name="ListaPersonas"
+                                Grid.Row="3"
+                                Grid.Column="0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Id}" Grid.Column="0"/>
+                                <Label Text="{Binding Name}" Grid.Column="1"/>
+                                                               
+                                <Button x:Name="bntEditar"
+                                        Text="Editar"                   
+                                        Grid.Row="0"                 
+                                        Grid.Column="2"
+                                        Clicked="bntEditar_Clicked"
+                                        CommandParameter="{Binding Id}"/>
+                                
+                                <Button x:Name="bntEliminar"
+                                        Text="Eliminar"                   
+                                        Grid.Row="0"                 
+                                        Grid.Column="3"
+                                        Clicked="bntEliminar_Clicked"
+                                        CommandParameter="{Binding Id}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

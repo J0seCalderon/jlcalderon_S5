@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jlcalderon_S5.Views.vEditar"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25" >
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Entry x:Name="txtId"
+                   Placeholder="ID"
+                   MaxLength="10"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Text="{Binding Id}"/>
+            
+            <Entry x:Name="txtPersonaEditar"
+                   Placeholder="Persona"
+                   MaxLength="10"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Text="{Binding Name}"/>
+
+            <Button x:Name="bntGuardarCambios"
+                    Text="Guardar Cambios"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Clicked="GuardarCambios_Clicked"/>
+            
+            <Button x:Name="bntCancelar"
+                    Text="Cancelar"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Clicked="bntCancelar_Clicked"/>
+
+            <Label x:Name="lblStatus"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
