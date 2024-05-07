@@ -46,32 +46,26 @@
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Id}" Grid.Column="0"/>
-                                <Label Text="{Binding Name}" Grid.Column="1"/>
-                                                               
-                                <Button x:Name="bntEditar"
-                                        Text="Editar"                   
-                                        Grid.Row="0"                 
-                                        Grid.Column="2"
-                                        Clicked="bntEditar_Clicked"
-                                        CommandParameter="{Binding Id}"/>
-                                
-                                <Button x:Name="bntEliminar"
-                                        Text="Eliminar"                   
-                                        Grid.Row="0"                 
-                                        Grid.Column="3"
-                                        Clicked="bntEliminar_Clicked"
-                                        CommandParameter="{Binding Id}"/>
+                                <Label Text="{Binding Id}" Grid.Column="0" HorizontalOptions="Start"/>
+                                <Label Text="{Binding Name}" Grid.Column="1" HorizontalOptions="Center"/>
+
+                                <StackLayout Orientation="Horizontal" Grid.Column="2" HorizontalOptions="End" Spacing="5">
+                                    <Button x:Name="bntEditar"
+                            Text="Editar"
+                            Clicked="bntEditar_Clicked"
+                            CommandParameter="{Binding Id}"/>
+                                    <Button x:Name="bntEliminar"
+                            Text="Eliminar"
+                            Clicked="bntEliminar_Clicked"
+                            CommandParameter="{Binding Id}"/>
+                                </StackLayout>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
