@@ -8,6 +8,12 @@
             Padding="30,0"
             Spacing="25" >
 
+            <Label 
+                Text="Editar Usuario"
+                FontSize="20"
+                HorizontalTextAlignment="Center"/>
+
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
